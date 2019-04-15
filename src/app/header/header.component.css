@@ -1,0 +1,75 @@
+/* css for theheader */
+header {
+  z-index: 2;
+  display: flex;
+}
+
+header {
+  font-size: 1rem;
+  position: fixed;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+}
+
+header {
+  font-weight: bold;
+  /* padding: 1rem 3rem; */
+  justify-content: space-between;
+
+  color: white;
+  background: #070709;
+}
+
+/* css for nav */
+header > nav > ul {
+  display: flex;
+}
+
+header > nav > ul {
+  margin: 0%;
+  padding-left: 0%;
+  list-style-type: none;
+}
+
+header > nav > ul li {
+  cursor: pointer;
+  padding: 1.3rem;
+}
+
+header > nav > ul #welcomeLink {
+  background: rgba(255, 255, 255, 0.911);
+  color: black;
+}
+
+header > nav > ul #welcomeLink a {
+  color: black;
+}
+
+header > nav > ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+header > nav > ul li a:hover {
+  color: gray;
+}
+
+/* css for app logo */
+header > div {
+  margin: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1.3rem;
+  cursor: pointer;
+}
+
+header > div > a {
+  padding: 0%;
+  margin: 0%;
+
+  text-decoration: none;
+  color: white;
+}

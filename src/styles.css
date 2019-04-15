@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+/* initial css */
+html {
+    height: 100%;
+  }
+  
+  * {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0%;
+    font-family: sans-serif;
+  }
+  
+  /* css for main */
+  main {
+    margin-top: 3.6rem;
+    background: #100b1b;
+    background: -moz-linear-gradient(-45deg, #100b1b 0%, #131736 100%);
+    background: -webkit-linear-gradient(-45deg, #100b1b 0%, #131736 100%);
+    background: linear-gradient(135deg, #100b1b 0%, #131736 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#100b1b', endColorstr='#131736',GradientType=1 );
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+  }

@@ -1,0 +1,23 @@
+<div class="form sell">
+  <form>
+    <div class="container">
+      <label htmlFor="title">
+        Title
+      </label>
+      <input onChange={change.bind(this)} type="text" name="title" placeholder="Enter Product Title" />
+      <label htmlFor="imageUrl">
+        Image URL
+      </label>
+      <input onChange={change.bind(this)} type="text" name="imageUrl" placeholder="Enter the url of your product" />
+      <label htmlFor="description">
+        Description
+      </label>
+      <textarea onChange={change.bind(this)} rows="3" id="description" name="description"></textarea>
+      <label htmlFor="price">
+        Price
+      </label>
+      <input onChange={change.bind(this)} type="number" name="price" placeholder="Enter product price" />
+      <button type="submit" class="SubmitButton">Sell</button>
+    </div>
+  </form>
+</div>

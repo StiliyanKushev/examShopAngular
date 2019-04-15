@@ -1,0 +1,24 @@
+<div  class="form register">
+  <form>
+    <div  class="container">
+      <label htmlFor="username">
+        Username
+      </label>
+      <input onChange={change.bind(this)} type="text" name="username" placeholder="Enter Username" />
+      <label htmlFor="email">
+        Email
+      </label>
+      <input onChange={change.bind(this)} type="text" name="email" placeholder="Enter Email" />
+      <label htmlFor="password">
+        Password
+      </label>
+      <input onChange={change.bind(this)} type="password" name="password" placeholder="Enter Password" />
+      <button type="submit"  class="SubmitButton">Register</button>
+    </div>
+    <div  class="otherOption">
+      <p>Have an account?
+        <a href="/login">Login.</a>
+      </p>
+    </div>
+  </form>
+</div>

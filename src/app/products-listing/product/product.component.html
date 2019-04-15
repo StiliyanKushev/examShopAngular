@@ -1,0 +1,16 @@
+<div class="productContainer">
+  <div class="title">
+    <p>{{source.title}}</p>
+    <p class="creator">{{source.creator}}</p>
+    <p class="price">{{source.price}}$</p>
+  </div>
+  <div class="image" [style.background]="'url(' + source.imageUrl + ')'"></div>
+  <div class="description">
+    <p>{{source.description}}</p>
+  </div>
+  <div class="buttons">
+    <button id="buy">BUY</button>
+    <button id="edit">EDIT</button>
+    <button id="delete">DELETE</button>
+  </div>
+</div>
