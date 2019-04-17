@@ -9,8 +9,8 @@
     <p>{{source.description}}</p>
   </div>
   <div class="buttons">
-    <button id="buy">BUY</button>
-    <button id="edit">EDIT</button>
-    <button id="delete">DELETE</button>
+    <button *ngIf="!isMine" id="buy">BUY</button>
+    <button *ngIf="isMine || isAdmin" id="edit">EDIT</button>
+    <button *ngIf="isMine || isAdmin" id="delete">DELETE</button>
   </div>
 </div>

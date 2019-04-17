@@ -8,6 +8,8 @@ import { ProductsListingModule } from './products-listing/products-listing.modul
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { InventoryComponent } from './inventory/inventory.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { InventoryComponent } from './inventory/inventory.component';
     BrowserModule,
     AppRoutingModule,
     FormsPagesModule,
-    ProductsListingModule
+    ProductsListingModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot() // ToastrModule added
   ],
   providers: [],
   bootstrap: [AppComponent]

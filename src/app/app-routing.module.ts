@@ -6,6 +6,9 @@ import { RegisterComponent } from './forms-pages/register/register.component';
 import { ShopComponent } from './products-listing/shop/shop.component';
 import { SellComponent } from './forms-pages/sell/sell.component';
 import { InventoryComponent } from './inventory/inventory.component';
+import { AuthGuardService } from './guards/auth-guard.service';
+import { HomeResolver } from './products-listing/home/home.resolver';
+import { ShopResolver } from './products-listing/shop/shop.resolver';
 
 const routes: Routes = [
   {
@@ -16,32 +19,44 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
+    resolve: {
+      data: HomeResolver
+    }
   },
   {
     path: 'shop',
     component: ShopComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
+    resolve: {
+      data: ShopResolver
+    }
   },
   {
     path: 'sell',
     component: SellComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
+    canActivate: [AuthGuardService],
   },
   {
     path: 'inventory',
     component: InventoryComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
+    canActivate: [AuthGuardService],
   },
   {
     path: 'login',
     component: LoginComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
+    canActivate: [AuthGuardService],
+    data: { guest: true }
   },
   {
     path: 'register',
     component: RegisterComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
+    canActivate: [AuthGuardService],
+    data: { guest: true }
   },
 ];
 

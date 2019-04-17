@@ -6,12 +6,16 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-  @Input() source:any;
+  @Input() source: any;
 
-  constructor() { 
+  isMine;
+  isAdmin;
+
+  constructor() {
   }
 
   ngOnInit() {
+    this.isMine = this.source.creator === sessionStorage.getItem("username");
+    this.isAdmin = sessionStorage.getItem("isAdmin");
   }
-
 }
