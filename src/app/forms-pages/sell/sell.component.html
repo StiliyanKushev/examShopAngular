@@ -1,23 +1,23 @@
 <div class="form sell">
-  <form>
+  <form #sellForm="ngForm" (ngSubmit)="onSubmit(sellForm.value)">
     <div class="container">
-      <label htmlFor="title">
+      <label for="title">
         Title
       </label>
-      <input onChange={change.bind(this)} type="text" name="title" placeholder="Enter Product Title" />
-      <label htmlFor="imageUrl">
+      <input type="text" name="title" placeholder="Enter Product Title" ngModel/>
+      <label for="imageUrl">
         Image URL
       </label>
-      <input onChange={change.bind(this)} type="text" name="imageUrl" placeholder="Enter the url of your product" />
-      <label htmlFor="description">
+      <input type="text" name="imageUrl" placeholder="Enter the url of your product" ngModel/>
+      <label for="description">
         Description
       </label>
-      <textarea onChange={change.bind(this)} rows="3" id="description" name="description"></textarea>
-      <label htmlFor="price">
+      <textarea rows="3" id="description" name="description" ngModel></textarea>
+      <label for="price">
         Price
       </label>
-      <input onChange={change.bind(this)} type="number" name="price" placeholder="Enter product price" />
-      <button type="submit" class="SubmitButton">Sell</button>
+      <input type="number" name="price" placeholder="Enter product price" ngModel />
+      <button class="SubmitButton">Sell</button>
     </div>
   </form>
 </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsService } from '../forms-pages/forms.service';
+import { GlobalStateService } from '../global-state.service';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +8,7 @@ import { FormsService } from '../forms-pages/forms.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  constructor(private formService: FormsService) { }
+  constructor(private formService: FormsService,private globalState: GlobalStateService) { }
 
   ngOnInit() {
   }
@@ -17,6 +18,6 @@ export class HeaderComponent implements OnInit {
   }
 
   get UserName(){
-    return sessionStorage.getItem("username");
+    return this.globalState.username;
   }
 }

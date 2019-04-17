@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { GlobalStateService } from 'src/app/global-state.service';
 
 @Component({
   selector: 'app-product',
@@ -11,11 +12,11 @@ export class ProductComponent implements OnInit {
   isMine;
   isAdmin;
 
-  constructor() {
+  constructor(private globalState: GlobalStateService) {
   }
 
   ngOnInit() {
-    this.isMine = this.source.creator === sessionStorage.getItem("username");
-    this.isAdmin = sessionStorage.getItem("isAdmin");
+    this.isMine = this.source.creator === this.globalState.username;
+    this.isAdmin = this.globalState.isAdmin === "true";
   }
 }
