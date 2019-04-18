@@ -1,0 +1,23 @@
+<div class="form sell">
+  <form #editForm="ngForm" (ngSubmit)="onSubmit(editForm.value)">
+    <div class="container">
+      <label for="title">
+        Title
+      </label>
+      <input [ngModel]="source.title" type="text" name="title" placeholder="Enter new product Title" />
+      <label for="imageUrl">
+        Image URL
+      </label>
+      <input [ngModel]="source.imageUrl" type="text" name="imageUrl" placeholder="Enter the new url of your product" />
+      <label for="description">
+        Description
+      </label>
+      <textarea [ngModel]="source.description" rows="3" id="description" name="description"></textarea>
+      <label for="price">
+        Price
+      </label>
+      <input [ngModel]="source.price" type="number" name="price" placeholder="Enter new product price" />
+      <button class="SubmitButton">Edit & Save</button>
+    </div>
+  </form>
+</div>

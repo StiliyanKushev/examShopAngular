@@ -11,7 +11,6 @@ import { Injectable } from '@angular/core';
 
 export class ShopResolver implements Resolve<IProduct[]> {
     constructor(private service: ProductsService) { }
-
     resolve(
         route: ActivatedRouteSnapshot,
         state: RouterStateSnapshot

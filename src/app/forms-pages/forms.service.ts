@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ToastrService } from 'ngx-toastr';
 import { Router } from "@angular/router";
 import { GlobalStateService } from '../global-state.service';
+import { ToastResponseService } from '../toast-response.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,9 +13,9 @@ export class FormsService {
 
   constructor(
     private http: HttpClient,
-    private toast: ToastrService,
     private router: Router,
-    private globalState: GlobalStateService
+    private globalState: GlobalStateService,
+    private toastify: ToastResponseService
   ) { }
 
   saveUserSession(resBody) {
@@ -37,29 +37,11 @@ export class FormsService {
     this.globalState.isAdmin = null;
   }
 
-  handleResponse(resBody, onSuccess) {
-    if (resBody.success === true) {
-      onSuccess();
-      this.toast.success(`${resBody.message}`);
-    }
-    else {
-      if (resBody.errors) {
-        for (let err in resBody.errors) {
-          this.toast.error(`${resBody.errors[err]}`);
-        }
-      }
-      else if (resBody.message) {
-        this.toast.error(`${resBody.message}`);
-      }
-    }
-  }
-
   registerUser(data: any) {
     this.http.post(this.BASE_URL + "/auth/register", data, { headers: { 'Content-Type': "application/json" } })
       .subscribe(res => {
-        this.handleResponse(res, () => {
+        this.toastify.handleResponse(res, () => {
           console.log("Handled register post");
-          this.saveUserSession(res);
           this.router.navigateByUrl("/login");
         });
       });
@@ -68,7 +50,7 @@ export class FormsService {
   loginUser(data: any) {
     this.http.post(this.BASE_URL + "/auth/login", data, { headers: { 'Content-Type': "application/json" } })
       .subscribe(res => {
-        this.handleResponse(res, () => {
+        this.toastify.handleResponse(res, () => {
           console.log("Handled login post");
           this.saveUserSession(res);
           this.router.navigateByUrl("/home");
@@ -81,7 +63,7 @@ export class FormsService {
     data.creator = this.globalState.username;
     this.http.post(this.BASE_URL + "/feed/product/create", data, { headers: { "Content-Type": "application/json", token: this.globalState.userToken } })
       .subscribe(res => {
-        this.handleResponse(res, () => {
+        this.toastify.handleResponse(res, () => {
           console.log("Handled sell post");
           this.router.navigateByUrl("/home");
         });

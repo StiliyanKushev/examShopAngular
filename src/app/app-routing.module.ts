@@ -9,6 +9,7 @@ import { InventoryComponent } from './inventory/inventory.component';
 import { AuthGuardService } from './guards/auth-guard.service';
 import { HomeResolver } from './products-listing/home/home.resolver';
 import { ShopResolver } from './products-listing/shop/shop.resolver';
+import { EditComponent } from './forms-pages/edit/edit.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,14 @@ const routes: Routes = [
     path: 'shop',
     component: ShopComponent,
     pathMatch: 'full',
+    resolve: {
+      data: ShopResolver
+    }
+  },
+  {
+    path: 'edit/:id',
+    component: EditComponent,
+    canActivate: [AuthGuardService],
     resolve: {
       data: ShopResolver
     }
