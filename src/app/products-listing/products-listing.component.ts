@@ -8,10 +8,14 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ProductsListingComponent implements OnInit {
   //todo: products type of Product[] *make an interface
   @Input() products: any;
+  @Input() dynamic: boolean;
   
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
+    if(this.dynamic === undefined){
+      this.dynamic = true;
+    }
   }
 
 }

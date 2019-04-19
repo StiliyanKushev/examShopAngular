@@ -5,11 +5,17 @@ import { LoginComponent } from './forms-pages/login/login.component';
 import { RegisterComponent } from './forms-pages/register/register.component';
 import { ShopComponent } from './products-listing/shop/shop.component';
 import { SellComponent } from './forms-pages/sell/sell.component';
-import { InventoryComponent } from './inventory/inventory.component';
 import { AuthGuardService } from './guards/auth-guard.service';
 import { HomeResolver } from './products-listing/home/home.resolver';
 import { ShopResolver } from './products-listing/shop/shop.resolver';
 import { EditComponent } from './forms-pages/edit/edit.component';
+import { InventoryComponent } from './products-listing/inventory/inventory.component';
+import { InventorySellingComponent } from './products-listing/inventory/inventory-selling/inventory-selling.component';
+import { InventorySoldComponent } from './products-listing/inventory/inventory-sold/inventory-sold.component';
+import { InventoryBoughtComponent } from './products-listing/inventory/inventory-bought/inventory-bought.component';
+import { InventorySellingResolver } from './products-listing/inventory/inventory-selling/inventory-selling.resolver';
+import { InventorySoldResolver } from './products-listing/inventory/inventory-sold/inventory-sold.resolver';
+import { InventoryBoughtResolver } from './products-listing/inventory/inventory-bought/inventory-bought.resolver';
 
 const routes: Routes = [
   {
@@ -32,6 +38,39 @@ const routes: Routes = [
     resolve: {
       data: ShopResolver
     }
+  },
+  {
+    path: 'inventory',
+    component: InventoryComponent,
+    pathMatch: 'full',
+    canActivate: [AuthGuardService],
+  },
+  {
+    path: 'inventory/selling',
+    component: InventorySellingComponent,
+    pathMatch: 'full',
+    resolve: {
+      data: InventorySellingResolver
+    },
+    canActivate: [AuthGuardService],
+  },
+  {
+    path: 'inventory/sold',
+    component: InventorySoldComponent,
+    pathMatch: 'full',
+    resolve: {
+      data: InventorySoldResolver
+    },
+    canActivate: [AuthGuardService],
+  },
+  {
+    path: 'inventory/bought',
+    component: InventoryBoughtComponent,
+    pathMatch: 'full',
+    resolve: {
+      data: InventoryBoughtResolver
+    },
+    canActivate: [AuthGuardService],
   },
   {
     path: 'edit/:id',

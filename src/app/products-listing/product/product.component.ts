@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class ProductComponent implements OnInit {
   @Input() source: any;
+  @Input() dynamic: boolean;
 
   isMine;
   isAdmin;

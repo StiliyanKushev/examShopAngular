@@ -8,7 +8,7 @@
   <div class="description">
     <p>{{source.description}}</p>
   </div>
-  <div class="buttons">
+  <div *ngIf="dynamic" class="buttons">
     <button *ngIf="!isMine" id="buy" (click)="buy()">BUY</button>
     <button *ngIf="isMine || isAdmin" id="edit" (click)="edit()">EDIT</button>
     <button *ngIf="isMine || isAdmin" id="delete" (click)="delete()">DELETE</button>

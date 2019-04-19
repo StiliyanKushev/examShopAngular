@@ -7,7 +7,6 @@ import { FormsPagesModule } from './forms-pages/forms-pages.module';
 import { ProductsListingModule } from './products-listing/products-listing.module';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { InventoryComponent } from './inventory/inventory.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
@@ -16,7 +15,6 @@ import { ToastrModule } from 'ngx-toastr';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    InventoryComponent,
   ],
   imports: [
     BrowserModule,
