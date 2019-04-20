@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, UrlSegment } from '@angular/router';
-import { ProductsService } from 'src/app/products-listing/products.service';
+import { ProductsService } from 'src/app/products-listing/shared/products.service';
 import { IProduct } from 'src/app/models/IProduct';
-import { GlobalStateService } from 'src/app/global-state.service';
+import { GlobalStateService } from 'src/app/core/global-state.service';
 
 @Component({
   selector: 'app-edit',
   templateUrl: './edit.component.html',
-  styleUrls: ['../forms.css']
+  styleUrls: ['../shared/forms.css']
 })
 export class EditComponent implements OnInit {
   productId: string;

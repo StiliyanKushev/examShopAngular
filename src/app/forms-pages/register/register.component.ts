@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsService } from '../forms.service';
+import { FormsService } from '../shared/forms.service';
 import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['../forms.css']
+  styleUrls: ['../shared/forms.css']
 })
 export class RegisterComponent implements OnInit {
 
@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
 
   onSubmit(formData:any){
     this.formService.registerUser(formData);
-    this.router.navigate(['/home']);
+    this.router.navigate(['/register']);
   }
 
 }

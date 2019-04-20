@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { CanActivate } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
-import { GlobalStateService } from '../global-state.service';
+import { GlobalStateService } from '../core/global-state.service';
 
 @Injectable({
   providedIn: 'root'

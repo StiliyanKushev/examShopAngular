@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { GlobalStateService } from 'src/app/global-state.service';
+import { GlobalStateService } from 'src/app/core/global-state.service';
 
 @Injectable({
   providedIn: 'root'

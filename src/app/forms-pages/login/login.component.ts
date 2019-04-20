@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsService } from '../forms.service';
+import { FormsService } from '../shared/forms.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['../forms.css']
+  styleUrls: ['../shared/forms.css']
 })
 export class LoginComponent implements OnInit {
 

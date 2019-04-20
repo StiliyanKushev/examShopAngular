@@ -6,7 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-inventory-sold',
   templateUrl: './inventory-sold.component.html',
-  styleUrls: ['../inventory.component.css']
+  styleUrls: ['../shared/inventory.component.css']
 })
 export class InventorySoldComponent implements OnInit {
 

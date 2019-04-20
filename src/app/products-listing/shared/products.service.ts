@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { IProduct } from '../models/IProduct';
-import { GlobalStateService } from '../global-state.service';
+import { IProduct } from '../../models/IProduct';
+import { GlobalStateService } from '../../core/global-state.service';
 import { Router } from '@angular/router';
-import { ToastResponseService } from '../toast-response.service';
+import { ToastResponseService } from '../../core/toast-response.service';
 
 @Injectable({
   providedIn: 'root'
@@ -45,6 +45,7 @@ export class ProductsService {
       this.router.navigateByUrl("/login");
     }
     else {
+      data.price = data.price.toString();
       this.http.post(this.BASE_URL + "/feed/product/edit/" + id, JSON.stringify(data), { headers: { "Content-Type": "application/json", token: this.globalState.userToken } })
         .subscribe(res => {
           this.toastify.handleResponse(res, () => {

@@ -1,7 +1,7 @@
 import { IProduct } from 'src/app/models/IProduct';
 import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
-import { ProductsService } from '../products.service';
+import { ProductsService } from '../shared/products.service';
 
 import { Injectable } from '@angular/core';
 

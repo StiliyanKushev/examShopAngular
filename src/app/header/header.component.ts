@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsService } from '../forms-pages/forms.service';
-import { GlobalStateService } from '../global-state.service';
+import { FormsService } from '../forms-pages/shared/forms.service';
+import { GlobalStateService } from '../core/global-state.service';
 
 @Component({
   selector: 'app-header',

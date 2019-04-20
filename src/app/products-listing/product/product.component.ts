@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { GlobalStateService } from 'src/app/global-state.service';
-import { ProductsService } from '../products.service';
+import { GlobalStateService } from 'src/app/core/global-state.service';
+import { ProductsService } from '../shared/products.service';
 import { Router } from '@angular/router';
 
 @Component({

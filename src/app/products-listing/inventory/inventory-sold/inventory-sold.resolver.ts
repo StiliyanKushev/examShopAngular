@@ -3,7 +3,7 @@ import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/r
 import { Observable } from 'rxjs';
 
 import { Injectable } from '@angular/core';
-import { InventoryService } from '../inventory.service';
+import { InventoryService } from '../shared/inventory.service';
 
 @Injectable({
     providedIn: 'root'

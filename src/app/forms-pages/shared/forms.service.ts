@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from "@angular/router";
-import { GlobalStateService } from '../global-state.service';
-import { ToastResponseService } from '../toast-response.service';
+import { GlobalStateService } from '../../core/global-state.service';
+import { ToastResponseService } from '../../core/toast-response.service';
 
 @Injectable({
   providedIn: 'root'
